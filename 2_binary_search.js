@@ -28,3 +28,22 @@ function binarySearch(array, item) {
 
 console.log(binarySearch(array, 7));
 console.log(count);
+
+
+// Реализация бинарного поиска с помощью рекурсии, чтобы сделать код лаконичнее и быстрее
+
+function recursiveBinarySearch(array, item, start, end) {
+    let middle = Math.floor((start + end) / 2);
+    count += 1;
+    if (item === array[middle]) {
+        return middle;
+    }
+    if (item < array[middle]) {
+        return recursiveBinarySearch(array, item, start, middle - 1);
+    } else {
+        return recursiveBinarySearch(array, item, middle + 1, end);
+    }
+}
+
+console.log(recursiveBinarySearch(array, 12, 0, array.length));
+console.log(count);
